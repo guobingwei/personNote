@@ -27,8 +27,9 @@
 
 <body>
 	<div>
-		UserName:<input type="text" name="username" /> <br/>
-		PassWord:<input type="password" name="password" /><br/> 
+		<h2 style="margin 0 auto">个人网站后台管理系统</h2>
+		UserName:<input type="text" name="username"/> <br/>
+		PassWord:<input type="password" name="password"/><br/> 
 		<input type="submit" id="loginBtn" value="Login" />
 	</div>
 </body>

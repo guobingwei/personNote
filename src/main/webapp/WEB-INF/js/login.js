@@ -1,6 +1,23 @@
-$(function() {
-	$("#loginBtn").click(function() {
-		console.log("login");
+$(document).ready(function(){
+	
+	//enter键提交内容
+	$("input[name=username]").focus();
+	var $inp = $('input');
+    $inp.keypress(function (e) { //这里给function一个事件参数命名为e，叫event也行，随意的，e就是IE窗口发生的事件。 
+		var key = e.which; //e.which是按键的值 
+		if (key == 13) { 
+		LoginHandle();
+		} 
+    }); 
+    
+    //通过点击按钮提交内容
+    $("#loginBtn").click(function(){
+		LoginHandle();
+    });
+    
+    //登录的处理方法
+    function LoginHandle() {
+    	console.log("login");
 		var username = $("input[name=username]").val();
 		var password = hex_md5($("input[name=password]").val());
 		var user = {
@@ -21,8 +38,8 @@ $(function() {
 				if (false == data.loginResult) {
 					alert("用户名或者密码错误，请重新登录！");
 				} else if (true == data.loginResult) {
-					alert("登录成功！");
-					var indexUrl = window.location.protocol+"//"+window.location.host+window.location.pathname+"html/index.html";
+					alert("用户名:" + user.username + "密码:" + user.password);
+					var indexUrl = window.location.protocol+"//"+window.location.host+window.location.pathname+"navigation/find.do";
 					window.location = indexUrl;
 				}
 			},
@@ -30,6 +47,8 @@ $(function() {
 				alert("服务器发生故障，请尝试重新登录！");
 			}
 		});
-	});
-
+    }       
 });
+
+
+

@@ -18,7 +18,7 @@ public class UserServiceTest {
 	@Test
 	public void testIsExist(){
 		UserEntity user = new UserEntity();
-		user.setUsername("phn");
+		user.setUsername("bing");
 		user.setPassword("123456");
 		boolean result = userService.isExist(user);
 		System.out.println(result);
