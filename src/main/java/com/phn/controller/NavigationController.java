@@ -29,12 +29,12 @@ public class NavigationController {
 	
 	@ResponseBody
 	@RequestMapping(value="/find", method = RequestMethod.GET)
-	public String findnavagation(HttpServletRequest request) {
+	public List<NavigationEntity> findnavagation(HttpServletRequest request) {
 		List<NavigationEntity> list = new ArrayList<NavigationEntity>();
 		list = (List<NavigationEntity>) navigationService.findnavigation();
 		System.out.println(list.listIterator());
 		request.setAttribute("list", list);
 		
-		return "index";
+		return list;
 	}
 }
