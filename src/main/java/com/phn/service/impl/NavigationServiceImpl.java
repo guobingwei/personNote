@@ -7,8 +7,11 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import antlr.collections.List;
+
+import java.util.List;
+
 import com.phn.dao.INavigationDao;
+import com.phn.model.NavigationEntity;
 import com.phn.service.INavigationService;
 
 /**
@@ -21,7 +24,7 @@ public class NavigationServiceImpl implements INavigationService {
 	private INavigationDao navigationDao;
 	
 	@Override
-	public List findnavigation() {
+	public List<NavigationEntity> findnavigation() {
 		return navigationDao.findnavigation();
 	}
 }

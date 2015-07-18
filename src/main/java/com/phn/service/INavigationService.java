@@ -3,11 +3,13 @@
  */
 package com.phn.service;
 
-import antlr.collections.List;
+import com.phn.model.NavigationEntity;
+
+import java.util.List;
 
 /**
  * @author Administrator
  */
 public interface INavigationService {
-	public List findnavigation();
+	public List<NavigationEntity> findnavigation();
 }

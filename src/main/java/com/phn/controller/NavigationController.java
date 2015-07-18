@@ -27,7 +27,6 @@ public class NavigationController {
 	@Resource
 	private INavigationService navigationService;
 	
-	@SuppressWarnings("unchecked")
 	@ResponseBody
 	@RequestMapping(value="/find", method = RequestMethod.GET)
 	public String findnavagation(HttpServletRequest request) {

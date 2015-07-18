@@ -10,10 +10,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
-import antlr.collections.List;
+import java.util.List;
 
 import com.phn.dao.IBaseDao;
 import com.phn.dao.INavigationDao;
+import com.phn.model.NavigationEntity;
 
 /**
  * @author Administrator
@@ -36,12 +37,15 @@ public class NavigationDaoImpl implements INavigationDao {
 		this.sessionFactory = sessionFactory;
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
-	public List findnavigation() {
+	public List<NavigationEntity> findnavigation() {
+		List<NavigationEntity> list = null;
 		Session session = baseDao.getSession();
-		String hql = "select NavigationName from NavigationEntity";
+		String hql = "from NavigationEntity";
 		Query query = session.createQuery(hql);
-		List list = (List) query.list();
+		list = query.list();
+		System.out.println(list);
 		return list;
 	}
 

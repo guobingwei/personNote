@@ -3,11 +3,12 @@
  */
 package com.phn.dao;
 
-import antlr.collections.List;
+import java.util.List;
+import com.phn.model.NavigationEntity;
 
 /**
  * @author Administrator
  */
 public interface INavigationDao {
-	public List findnavigation();
+	public List<NavigationEntity> findnavigation();
 }
