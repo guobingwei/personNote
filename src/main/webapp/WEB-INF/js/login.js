@@ -39,7 +39,7 @@ $(document).ready(function(){
 					alert("用户名或者密码错误，请重新登录！");
 				} else if (true == data.loginResult) {
 					alert("用户名:" + user.username + "密码:" + user.password);
-					var indexUrl = window.location.protocol+"//"+window.location.host+window.location.pathname+"navigation/find.do";
+					var indexUrl = window.location.protocol+"//"+window.location.host+window.location.pathname+"html/index.html";
 					window.location = indexUrl;
 				}
 			},
