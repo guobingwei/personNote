@@ -1,0 +1,288 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The Black sea Website Template | Home :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">	
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="../css/style1.css" rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100italic,100,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>  
+<!---- start-smooth-scrolling---->
+<script type="text/javascript" src="../js/move-top.js"></script>
+<script type="text/javascript" src="../js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+<!---end-smooth-scrolling-->
+<!--start-top-nav-script-->
+		<script>
+			$(function() {
+				var pull 		= $('#pull');
+					menu 		= $('nav ul');
+					menuHeight	= menu.height();
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
+				$(window).resize(function(){
+	        		var w = $(window).width();
+	        		if(w > 320 && menu.is(':hidden')) {
+	        			menu.removeAttr('style');
+	        		}
+	    		});
+			});
+		</script>
+<!--End-top-nav-script-->
+</head>
+<body>
+	<!--start-header-->
+			<div id="home" class="banner">
+					<div class="header">
+						<div class="container">
+							<div class="logo">
+								<a href="#"><img src="../images1/logo.png" alt=""></a>  
+							</div>
+							<!--start-top-nav-->
+							 <nav class="top-nav">
+								<ul class="top-nav">
+									<li><a href="index.html">HOME</a></li>&nbsp;/
+									<li><a href="about.html">ABOUT ME</a></li>&nbsp;/
+									<li><a href="portfolio.html">PORTFOLIO</a></li>&nbsp;/
+									<li><a href="#contact" class="scroll">CONTACT ME</a></li>
+								</ul>
+								<a href="#" id="pull"><img src="../images1/menu-icon.png" title="menu" /></a>
+							</nav>
+							<div class="clearfix"> </div>
+						</div>
+				</div>
+				<div class="banner-text">
+					<div  id="top" class="callbacks_container">
+			      		<ul class="rslides" id="slider4">
+			        	<li>
+							<div class="banner-top">
+								<h1>WE NEED THE TONIC OF WILDNESS</h1>	
+								<div class="bttn">
+									<a href="#">Read more</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-top">
+								<h1>WE NEED THE TONIC OF WOESTHEID</h1>	
+								<div class="bttn">
+									<a href="#">Read more</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-top">
+								<h1>WE NEED THE TONIC OF WILDNESS</h1>	
+								<div class="bttn">
+									<a href="#">Read more</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-top">
+								<h1>WE NEED THE TONIC OF WOESTHEID</h1>	
+								<div class="bttn">
+									<a href="#">Read more</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-top">
+								<h1>WE NEED THE TONIC OF WILDNESS</h1>	
+								<div class="bttn">
+									<a href="#">Read more</a>
+								</div>
+							</div>
+						</li>
+			      </ul>
+			    </div>
+			    <div class="clearfix"> </div>
+				</div>
+			</div>
+		<!--End-header-->
+		<!--Slider-Starts-Here-->
+				<script src="../js/responsiveslides.min.js"></script>
+			 <script>
+			    // You can also use "$(window).load(function() {"
+			    $(function () {
+			      // Slideshow 4
+			      $("#slider4").responsiveSlides({
+			        auto: true,
+			        pager: true,
+			        nav: true,
+			        speed: 500,
+			        namespace: "callbacks",
+			        before: function () {
+			          $('.events').append("<li>before event fired.</li>");
+			        },
+			        after: function () {
+			          $('.events').append("<li>after event fired.</li>");
+			        }
+			      });
+			
+			    });
+			  </script>
+			<!--End-slider-script-->
+			<!--about-starts-->
+			<div class="time">
+				<div class="container">
+					<div class="time-top">
+						<h3>At the same time that we are earnest to explore & learn all things</h3>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					</div>
+					<div class="time-bottom">
+						<div class="col-md-4 about-bottom-one">
+							<span class="time-one"></span>
+						</div>
+						<div class="col-md-4 about-bottom-one">
+							<span class="time-two"></span>
+						</div>
+						<div class="col-md-4 about-bottom-one">
+							<span class="time-tre"></span>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			</div>
+			<!--End-about-->
+			<!--starts-dhavan-->
+			<div class="dhavan">
+				<div class="container">
+					<div  id="top" class="callbacks_container">
+			      		<ul class="rslides" id="slider5">
+			        	<li>
+							<div class="dhavan-top">
+								<div class="dhavan-left">
+									<img src="../images1/dhavan.png" alt="">
+								</div>
+								<div class="dhavan-right">
+									<h3>DHAVAN</h3>
+									<img src="../images1/quots.png" alt="">
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="dhavan-bottom">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+							</div>
+							</li>
+							<li>
+							<div class="dhavan-top">
+								<div class="dhavan-left">
+									<img src="../images1/sachin.png" alt="">
+								</div>
+								<div class="dhavan-right">
+									<h3>SACHIN</h3>
+									<img src="../images1/quots.png" alt="">
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="dhavan-bottom">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+							</div>
+							</li>
+							<li>
+							<div class="dhavan-top">
+								<div class="dhavan-left">
+									<img src="../images1/uv.png" alt="">
+								</div>
+								<div class="dhavan-right">
+									<h3>YUVRAJ</h3>
+									<img src="../images1/quots.png" alt="">
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="dhavan-bottom">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+							</div>
+							</li>
+			      </ul>
+			    </div>
+			    <div class="clearfix"> </div>
+				</div>
+			</div>
+			<!--End-dhavan-->
+			<!--Slider-Starts-Here-->
+				<script src="../js/responsiveslides.min.js"></script>
+			 <script>
+			    // You can also use "$(window).load(function() {"
+			    $(function () {
+			      // Slideshow 4
+			      $("#slider5").responsiveSlides({
+			        auto: true,
+			        pager: true,
+			        nav: true,
+			        speed: 500,
+			        namespace: "callbacks",
+			        before: function () {
+			          $('.events').append("<li>before event fired.</li>");
+			        },
+			        after: function () {
+			          $('.events').append("<li>after event fired.</li>");
+			        }
+			      });
+			
+			    });
+			  </script>
+			<!--End-slider-script-->
+			<!--starts-contact-->
+			<div class="contact" id="contact">
+				<iframe src="map.html" width="600" height="450" frameborder="0" scrolling="no"></iframe>				
+				<div class="container">
+					<div class="contact-top">
+						<form>
+					         <input type="text" class="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
+					         <input type="text" class="text" value="email address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'email address';}">
+					     	 <textarea value="Message" onfocus="if(this.value == 'Message') this.value='';" onblur="if(this.value == '') this.value='Your message here';">Message</textarea><br> 
+					     	 <div class="sub-button">
+								<input name="submit" type="submit" value="">
+							</div>                
+		            	</form>
+					</div>
+				</div>
+			</div>
+			<!--End-contact-->
+			<!--starts-footer-->
+			<div class="footer">
+				<div class="container">
+					<div class="footer-main">
+						<p>&copy 2014-Template by <a href="http://w3layouts.com/">w3layouts</a></p>
+					</div>
+				</div>
+				<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+			</div>
+			<!--End-footer-->
+</body>
+</html>
