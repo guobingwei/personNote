@@ -45,6 +45,8 @@
 	<mvc:resources mapping="/html1/**" location="/WEB-INF/html1/" />
 	<mvc:resources mapping="/video/**" location="/WEB-INF/video/" />
 	<mvc:resources mapping="/page/**" location="/WEB-INF/page/" />
+	<mvc:resources mapping="/resource/**" location="/WEB-INF/resource/" />
+	
 	<bean
 		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 		<property name="messageConverters">
