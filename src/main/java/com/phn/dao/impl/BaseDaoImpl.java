@@ -36,13 +36,4 @@ public class BaseDaoImpl implements IBaseDao{
 		this.sessionFactory = sessionFactory;
 		
 	}
-	
-   /* @Override
-	public Session getSession() {
-		return sessionFactory.getCurrentSession();
-	}
-    @Override
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}*/
 }

@@ -3,37 +3,38 @@
  */
 package com.phn.dao.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
+import com.phn.dao.IArticleDao;
 import com.phn.dao.IBaseDao;
-import com.phn.dao.INavigationDao;
-import com.phn.model.NavigationEntity;
+import com.phn.model.Article;
 
 /**
  * @author Administrator
  */
-@Repository("navigationDao")
-public class NavigationDaoImpl implements INavigationDao {
+@Repository("articleDao")
+public class ArticleDaoImpl implements IArticleDao {
 
+	/* (non-Javadoc)
+	 * @see com.phn.dao.IArticleDao#ArticleList()
+	 */
 	@Resource
 	public IBaseDao baseDao;
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<NavigationEntity> findnavigation() {
-		List<NavigationEntity> list = null;
+	public List<Article> ArticleList() {
+		List<Article> list = null;
 		Session session = baseDao.getSession();
-		String hql = "from NavigationEntity";
+		String hql = "from Article";
 		Query query = session.createQuery(hql);
 		list = query.list();
-		System.out.println(list);
 		return list;
 	}
 
