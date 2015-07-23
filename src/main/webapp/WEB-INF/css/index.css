@@ -79,6 +79,12 @@ opacity:1;
 .blogs h3 { font-size: 14px; font-weight: bold; margin-bottom: 15px; transition: all .5s }
 .blogs h3 a { color: #474645; }
 .blogs h3:hover { text-decoration: underline }
+.page { margin: 40px 0; text-align: center; width: 100%; overflow: hidden; }
+.page a b { color: #999; }
+.page>b, .page a { margin: 0 2px; height: 26px; line-height: 26px; border-radius: 50%; width: 26px; text-align: center; display: inline-block }
+.page a { margin: 0 2px; height: 26px; line-height: 26px; border-radius: 50%; width: 26px; text-align: center; display: inline-block }/* Õë¶ÔIE6 */
+.page>b, .page a:hover { background: #333; color: #FFF; }
+.page a { color: #F33; border: #999 1px solid; }
 .blogs figure { float: left; width: 25%; overflow: hidden; }
 .blogs figure img { width: 100%; margin: auto; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s; }
 .blogs figure:hover img { -moz-transform: scale(1.1); -webkit-transform: scale(1.1); -o-transform: scale(1.1); -ms-transform: scale(1.1); }
