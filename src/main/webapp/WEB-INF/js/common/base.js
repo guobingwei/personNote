@@ -24,7 +24,7 @@ function AjaxObj() {
 			// 同步async: false,（默认是true）;
 			// 如上：false为同步，这个方法中的Ajax请求将整个浏览器锁死，
 			// 只有test.jsp执行结束后，才可以执行其它操作。
-			async : false,
+			//async : false,
 			success : function(data) {
 				AjaxObj.backdata = data;
 				AjaxObj.AfterRequest();
@@ -36,3 +36,18 @@ function AjaxObj() {
 	}
 	return AjaxObj;
 }
+
+/**
+ * 模板替换规则
+ * @param obj
+ * @returns {string}
+ */
+String.prototype.temp = function(obj) {
+    //返回替换后的值
+    return this.replace(/\$\w+\$/gi, function(matchs) {
+        //matchs输出符合正则表达式"$\w+\$"的所有字符串,如$data$
+        //matchs.replace(/\$/g, "")就是将$替换为"",如$data$替换后为data
+        var returns = obj[matchs.replace(/\$/g, "")];
+        return (returns + "") == "undefined"? "": returns;
+    });
+};
