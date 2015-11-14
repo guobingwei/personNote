@@ -1,0 +1,9 @@
+connectionTestQuery=SELECT 1
+
+minimumPoolSize=1
+maximumPoolSize=1
+
+dataSourceClassName=com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+dataSource.user=innohub
+dataSource.password=innohub2015
+dataSource.url=jdbc:mysql://localhost:3306/innohub?useUnicode=true&characterEncoding=UTF-8

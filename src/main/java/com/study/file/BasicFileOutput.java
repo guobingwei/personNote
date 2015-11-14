@@ -1,4 +1,4 @@
-package com.gobby.groovy.file;
+package com.study.file;
 
 import java.io.*;
 
