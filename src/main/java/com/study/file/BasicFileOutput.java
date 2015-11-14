@@ -19,7 +19,7 @@ public class BasicFileOutput {
         int lineCount = 1;
         String s;
         while ((s = bf.readLine()) != null) {
-            out.println(lineCount++ + ":" + s);
+            out.println(lineCount++ + ":" + s + "/n");
         }
         out.close();
         System.out.print(FileTest1.read(file));
