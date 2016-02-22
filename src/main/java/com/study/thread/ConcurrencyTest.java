@@ -25,8 +25,11 @@ public class ConcurrencyTest {
 		for(long i = 0; i < count; i++) {
 			b--;
 		}
-		long time = System.currentTimeMillis() - start;
+		
+		// 等待该线程结束之后再执行后面的逻辑
 		thread.join();
+		long time = System.currentTimeMillis() - start;
+		
 		System.out.println("concurrency:" + time + "ms,b=" + b);
 	}
 	
