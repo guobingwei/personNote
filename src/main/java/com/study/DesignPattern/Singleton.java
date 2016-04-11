@@ -1,4 +1,4 @@
-package com.study.singleton;
+package com.study.DesignPattern;
 
 
 /**
