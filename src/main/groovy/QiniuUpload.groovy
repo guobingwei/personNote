@@ -6,7 +6,7 @@ import com.qiniu.util.Auth
 final String ACCESS_KEY = '_2ePmFczYUPrZcpo_EBBUa4Lj24YLCOjuE_DjguO'
 final String SECRET_KEY = '_nKBPEeMqLy1FNYE-glfFtDJH7s-D-pLAvdBBbsV'
 
-String bucket = 'innohub-cm-test'
+String bucket = 'innohub-cm'
 def auth = Auth.create(ACCESS_KEY, SECRET_KEY)
 
 def upload = {String key, byte[] data, boolean replace = false ->
@@ -19,6 +19,6 @@ def upload = {String key, byte[] data, boolean replace = false ->
 	}
 }
 
-String path = 'G:/photo/nanpengyou.jpg'
+String path = 'D:/upload/精明购.jpg'
 def f = new File(path)
-upload('nanpengyou.jpg', f.bytes)
+upload('精明购.jpg', f.bytes)

@@ -13,7 +13,10 @@ public class Singleton {
     }
 
     private static Singleton instance;
-    // 普通做法，存在线程安全问题  - 非延迟加载
+    /**
+     *  1、普通做法，存在线程安全问题  - 延迟加载
+     *  懒汉式
+     */
     public static Singleton getInstance() {
         if(instance == null) {
             instance = new Singleton();
@@ -23,9 +26,11 @@ public class Singleton {
 
     public static void main(String [] args) {
         Singleton.getInstance();
+        Enum a = SingletonEnum.INSTANCE;
     }
 
     /**
+     * 2、懒汉式
      *  通过同步方法来实现单例，但是性能开销很大 - 同步延迟加载
      *  由于对getInstance()做了同步处理，synchronized将导致性能开销。
      *  如果getInstance()被多个线程频繁的调用，将会导致程序执行性能的下降。
@@ -39,7 +44,8 @@ public class Singleton {
     }
 
     /**
-     * 双重入检查锁
+     * 3、双重入检查锁
+     * 懒汉式
      * 第一次检查不加锁，第二次枷锁。用了volatile变量来防止处理器重排序
      */
     private volatile static Singleton instanceVola;
@@ -56,6 +62,7 @@ public class Singleton {
 
     /**
      * 错误写法
+     * 4、懒汉式
      * instanceError 不是 volatile类型，双重检测不能保证线程安全
      * new Singleton()用伪代码可以这样表示
      * 1、为单例类分配内存空间
@@ -73,5 +80,27 @@ public class Singleton {
             }
         }
         return instanceError;
+    }
+
+    /**
+     * 5、饿汉式 非延迟加载
+     * 类初始化的时候就创建了实例
+     * 利用类加载机制实现线程安全
+     */
+    private static Singleton instanceUnlazy = new Singleton();
+    public static Singleton getInstanceUnlazy() {
+        return instanceUnlazy;
+    }
+
+    /**
+     * 6、静态内部类
+     * 懒汉式
+     * 只适用于静态域的情况，双检锁方式可在实例域需要延迟初始化时使用。
+     */
+    public static class SingletonHolder {
+        private static final Singleton SINGLETON = new Singleton();
+        public static final Singleton getSingleton() {
+            return SingletonHolder.SINGLETON;
+        }
     }
 }
