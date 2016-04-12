@@ -1,4 +1,4 @@
-package com.study.DesignPattern;
+package com.study.designPattern;
 
 
 /**

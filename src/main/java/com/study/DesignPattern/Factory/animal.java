@@ -1,4 +1,4 @@
-package com.study.DesignPattern.Factory;
+package com.study.designPattern.factory;
 
 /**
  * 接口
