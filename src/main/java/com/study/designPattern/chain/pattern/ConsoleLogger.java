@@ -1,5 +1,7 @@
 package com.study.designPattern.chain.pattern;
 
+import com.study.designPattern.chain.pattern.AbstractLogger;
+
 /**
  * Created by guobing on 2016/4/25.
  */

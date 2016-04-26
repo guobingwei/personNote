@@ -1,6 +1,7 @@
 package com.study.designPattern.chain.pattern;
 
 /**
+ * 创建抽象的记录器类。
  * Created by guobing on 2016/4/25.
  */
 public abstract class AbstractLogger {
