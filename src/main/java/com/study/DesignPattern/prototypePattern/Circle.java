@@ -1,7 +1,5 @@
 package com.study.designPattern.prototypePattern;
 
-import sun.security.provider.SHA;
-
 /**
  * Created by guobing on 2016/4/13.
  */

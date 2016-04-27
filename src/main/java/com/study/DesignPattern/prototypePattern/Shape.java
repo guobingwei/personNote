@@ -1,6 +1,5 @@
 package com.study.designPattern.prototypePattern;
 
-import java.util.Objects;
 
 /**
  * Created by guobing on 2016/4/13.
