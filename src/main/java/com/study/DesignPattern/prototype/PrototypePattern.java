@@ -1,4 +1,4 @@
-package com.study.designPattern.prototypePattern;
+package com.study.designPattern.prototype;
 
 /**
  * Created by guobing on 2016/4/13.

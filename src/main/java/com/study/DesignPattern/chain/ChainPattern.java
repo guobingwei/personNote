@@ -1,4 +1,4 @@
-package com.study.designPattern.chain.pattern;
+package com.study.designPattern.chain;
 
 /**
  * 责任链模式
