@@ -1,0 +1,17 @@
+package com.study.designPattern.adapter;
+
+/**
+ * Created by guobing on 2016/4/29.
+ */
+public class Mp4Player implements AdvancedMediaPlayer{
+
+    @Override
+    public void playVlc(String fileName) {
+        System.out.println("fileName : " +fileName);
+    }
+
+    @Override
+    public void playMp4(String fileName) {
+        System.out.println("fileName : " +fileName);
+    }
+}
