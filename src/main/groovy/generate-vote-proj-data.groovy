@@ -27,18 +27,12 @@ Map ext = [:]
 ext.key = ''
 
 String str = '''
-微信路况
-weixinlukuang
-免费提供实时路况查询、违章查询、路况定制等路况相关服务。无需下载，只要关注即可使用。
-车托帮（北京）移动科技有限公司
+企业去哪
 '''
 
 List ll = str.readLines().collect{it.trim()}.grep{it}
 Map one = [:]
 one.name = ll[0]
-one.wx = ll[1]
-one.des = ll[2]
-one.comp = ll[3]
 one.extra = JSON.toJSONString(ext)
 
 def updateRow = {
@@ -62,7 +56,7 @@ def updateTicket = {int id ->
 	def d = D.gen()
 	Map row = d.queryMap("select ticket from ih_rank_candi_general where id = ?", [id])
 	if(!row){
-		println 'row not exist ' + id
+		println 'row not exist ' + id  
 		return
 	}
 	if(!row.ticket){
@@ -105,6 +99,9 @@ def updateMediaId = {int id ->
 	println 'done update media id ' + mediaId + ' 4 ' + id
 }
 
-//updateRow()
-updateTicket(2)
+updateRow()
+//(26..48).each{
+//	updateTicket(it)
+//}
+
 //updateMediaId(1)

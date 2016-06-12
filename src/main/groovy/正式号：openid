@@ -1,0 +1,25 @@
+正式号：
+otN_yssmCC1JudqQQaon2S1GYrJg open 
+otN_yssuDtHU4BT7Sl3qIVrBYEUU 东伟
+otN_ysuBhigv_9UIQ0l2ljxKzYlg c姐
+otN_ysldohRzmxwk4bmDy1krCWzQ 马松涛
+otN_ysoDa6Op9Qr-OB0LqLagPfoc 教授
+otN_ysm0LJjgMiqLVmAjss-jQyaU guobing
+otN_ysie1uaEfuH60aB2Y7RWKoV8 王西西
+otN_ysmJxYaLAkf7DOfYklb3FCUc kelly
+otN_ysgqWsBIcytKU1PuW_J-YXhA 梁杰
+otN_yst1dTg7bIDvmrpPdR_a7ddI 周鑫
+
+
+
+测试号
+oeAWKwbW4odvTxnItWXeCQubCtqo guobing
+
+o7MjNtxUx32H20KHVCESvTWE3k4M
+
+
+dada openid sql
+o7MjNtxUx32H20KHVCESvTWE3k4M
+SELECT a.*, b.* from (SELECT * from ih_mp_user_all WHERE nickname like '%魏国兵%') a
+INNER JOIN ih_mp_user_all_focus b
+on a.unionid = b.unionid WHERE b.conf_file='dada'

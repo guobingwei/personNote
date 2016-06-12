@@ -144,7 +144,7 @@ sb << """
 	</tr>
 	"""
 
-for(one in 0..3){
+for(one in 0..9){
 	sb << '<tr>'
 	sb << getOneDayStat(day - one)
 	sb << '</tr>'

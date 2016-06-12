@@ -60,7 +60,7 @@ def getOneDayStat = {Date day ->
 	ss.toString()
 }
 
-def day = new Date() 
+def day = new Date() + 1
 day.hours = 0
 day.minutes = 0
 day.seconds = 0

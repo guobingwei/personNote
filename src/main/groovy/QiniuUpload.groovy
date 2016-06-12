@@ -19,6 +19,8 @@ def upload = {String key, byte[] data, boolean replace = false ->
 	}
 }
 
-String path = 'D:/upload/精明购.jpg'
-def f = new File(path)
-upload('精明购.jpg', f.bytes)
+new File('H:/activity/pic').listFiles().each{
+	upload(it.name, it.bytes)	
+	println it.name
+}
+
