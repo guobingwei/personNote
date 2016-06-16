@@ -1,17 +1,14 @@
 package com.study.algorithm;
 
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
 /**
  * Created by guobing on 2016/6/15.
  */
 public class FastSort {
-
-    public static void main(String [] args ) {
-        int [] attr = {22, 14, 46, 75, 68, 77, 87, 37, 17, 27, 70};
-        sort(attr, 0, attr.length - 1);
-        for(int i = 0; i < attr.length; i++) {
-            System.out.print(attr[i] + ", ");
-        }
-    }
 
     /**
      * 快速排序
@@ -41,13 +38,6 @@ public class FastSort {
         }
     }
 
-    static void swap(int a, int b) {
-        int temp;
-        temp = a;
-        a = b;
-        b = temp;
-    }
-
     /**
      * 快速排序 参考网上
      * @param s
@@ -72,6 +62,49 @@ public class FastSort {
             s[i] = x;
             quikSort(s, l, i - 1); // 递归调用
             quikSort(s, i + 1, r);
+        }
+    }
+
+    /**
+     * 获取两个数组相同的元素
+     * @param a
+     * @param b
+     * @return
+     */
+    public static int [] getIntersection(int [] a, int [] b) {
+        List<Integer> list = new LinkedList<>();
+        Set<Integer> set = new HashSet<>();
+
+        for(int e: a) {
+            if(!list.contains(e))
+                list.add(e);
+        }
+
+        for(int e: b) {
+            if(list.contains(e)) {
+                set.add(e);
+            }
+        }
+
+        Integer [] re = {};
+        re = set.toArray(re);
+
+        int [] r = new int[re.length];
+        int i = 0;
+        for(int e: re) {
+            r[i] = e;
+            i++;
+        }
+
+        return r;
+    }
+
+    public static void main(String [] args ) {
+        int [] a = {1};
+        int [] b = {1};
+        int [] r = getIntersection(a, b);
+        for(int e : r ) {
+            System.out.println(e);
         }
     }
 }
