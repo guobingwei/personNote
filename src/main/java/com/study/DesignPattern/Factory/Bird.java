@@ -1,4 +1,4 @@
-package com.study.designPattern.factory;
+package com.study.DesignPattern.Factory;
 
 /**
  * Created by john on 2016/4/11.
