@@ -14,40 +14,23 @@ import java.util.*;
 public class ThreeSumClosest {
 
     /**
-     *这个是求三个与目标数最接近的和。和题意不符！
+     *  这个是求三个与目标数最接近的和。和题意不符！
      * @param nums
      * @param target
      * @return
      */
     public static int threeSumClosest(int[] nums, int target) {
         int size = nums.length;
-        if(size < 3) {
-            return 0;
-        }
-
-        int c1 = 0, c2 = 1, c3 = 2;
-        List list = new ArrayList();
-        while (c1 <= size - 3) {
-            int s = nums[c1] + nums[c2] + nums[c3];
-            list.add(s);
-            if(c3 == size - 1) {
-                c1++;
-                c2++;
-                c3 = c2 + 1;
-            } else {
-                c3++;
+        if(size <= 3) {
+            int sum = 0;
+            for(int n : nums) {
+                sum += n;
             }
+            return sum;
         }
 
-        List diffList = new ArrayList();
-        for(int i = 0; i < list.size(); i++) {
-            Map<String, Integer> r = new HashMap<>();
-            r.put("num", (int)list.get(i));
-            r.put("diff", Math.abs(target - (int)list.get(i)));
-            diffList.add(r);
-        }
-
-        Collections.sort(diffList, new Comparator<Map<String,Integer>>(){
+        combine(nums, 3, target);
+        Collections.sort(list, new Comparator<Map<String,Integer>>(){
             public int compare(Map<String, Integer> o1, Map<String, Integer> o2) {
                 //取出操作时间
                 int ret = 0;
@@ -56,12 +39,14 @@ public class ThreeSumClosest {
             }
         });
 
-        Map one = (Map)diffList.get(0);
+        Map one = (Map)list.get(0);
         return (int)one.get("num");
     }
 
+    public static List list = new ArrayList();
+
     /**
-     * 功能：找出与target最接近的三个数
+     * 功能：找出与target最接近的三个数,求和
      * @param nums 目标数组
      * @param target 目标元素
      * @return 符合条件的三个数字之和
@@ -106,13 +91,13 @@ public class ThreeSumClosest {
         return result;
     }
 
-    public static void combine(int[] a, int n) {
-
+    public static void combine(int[] a, int n, int target) {
         if(null == a || a.length == 0 || n <= 0 || n > a.length)
             return;
 
-        int[] b = new int[n];//辅助空间，保存待输出组合数
-        getCombination(a, n , 0, b, 0);
+        // 辅助空间，保存待输出组合数
+        int[] b = new int[n];
+        getCombination(a, n , 0, b, 0, target);
     }
 
     /**
@@ -123,13 +108,20 @@ public class ThreeSumClosest {
      * @param b 保存组合数的数组
      * @param index
      */
-    private static void getCombination(int[] a, int n, int begin, int[] b, int index) {
+    private static void getCombination(int[] a, int n, int begin, int[] b, int index, int target) {
 
         // 如果够n个数了，输出b数组
         if(n == 0){
+            int sum = 0;
             for(int i = 0; i < index; i++){
+                sum += b[i];
                 System.out.print(b[i] + " ");
             }
+
+            Map r = new HashMap();
+            r.put("num", sum);
+            r.put("diff", Math.abs(target - sum));
+            list.add(r);
             System.out.println();
             return;
         }
@@ -137,20 +129,14 @@ public class ThreeSumClosest {
         for(int i = begin; i < a.length; i++){
 
             b[index] = a[i];
-            getCombination(a, n-1, i+1, b, index+1);
+            getCombination(a, n-1, i+1, b, index+1, target);
         }
-
     }
 
     public static void main(String [] args) {
-        /*int [] nums = {1, 2, 4, 8, 16, 32, 64, 128};
-        int target = 1;
+        int [] nums = {1, 2, 4, 8, 16, 32, 64, 128};
+        int target = 82;
         int r = threeSumClosest(nums, target);
-        System.out.print(r);*/
-
-        int[] a = {1, 2, 4, 8, 16, 32, 64, 128};
-        int n = 3;
-        ThreeSumClosest.combine(a,n);
-
+        System.out.print(r);
     }
 }
