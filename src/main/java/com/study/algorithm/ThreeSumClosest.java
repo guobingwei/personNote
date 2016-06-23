@@ -1,6 +1,5 @@
 package com.study.algorithm;
 
-import java.text.ParseException;
 import java.util.*;
 
 /**
@@ -61,6 +60,12 @@ public class ThreeSumClosest {
         return (int)one.get("num");
     }
 
+    /**
+     * 功能：找出与target最接近的三个数
+     * @param nums 目标数组
+     * @param target 目标元素
+     * @return 符合条件的三个数字之和
+     */
     public static int closestTarget(int[] nums, int target) {
         int result = 0;
         int size = nums.length;
@@ -101,10 +106,51 @@ public class ThreeSumClosest {
         return result;
     }
 
+    public static void combine(int[] a, int n) {
+
+        if(null == a || a.length == 0 || n <= 0 || n > a.length)
+            return;
+
+        int[] b = new int[n];//辅助空间，保存待输出组合数
+        getCombination(a, n , 0, b, 0);
+    }
+
+    /**
+     * 排列组合问题
+     * @param a 数组
+     * @param n 数组长度
+     * @param begin 开始排序的数
+     * @param b 保存组合数的数组
+     * @param index
+     */
+    private static void getCombination(int[] a, int n, int begin, int[] b, int index) {
+
+        // 如果够n个数了，输出b数组
+        if(n == 0){
+            for(int i = 0; i < index; i++){
+                System.out.print(b[i] + " ");
+            }
+            System.out.println();
+            return;
+        }
+
+        for(int i = begin; i < a.length; i++){
+
+            b[index] = a[i];
+            getCombination(a, n-1, i+1, b, index+1);
+        }
+
+    }
+
     public static void main(String [] args) {
-        int [] nums = {1, 2, 4, 8, 16, 32, 64, 128};
+        /*int [] nums = {1, 2, 4, 8, 16, 32, 64, 128};
         int target = 1;
         int r = threeSumClosest(nums, target);
-        System.out.print(r);
+        System.out.print(r);*/
+
+        int[] a = {1, 2, 4, 8, 16, 32, 64, 128};
+        int n = 3;
+        ThreeSumClosest.combine(a,n);
+
     }
 }
