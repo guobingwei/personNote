@@ -133,10 +133,46 @@ public class ThreeSumClosest {
         }
     }
 
+    // 简洁的求法，先排序 O(n2)
+    public static int closest(int[] nums, int target) {
+        int min = Integer.MAX_VALUE;
+
+        Arrays.sort(nums);
+
+        int size = nums.length;
+        int result = 0;
+
+        for(int i = 0; i < size; i++) {
+            int l = i + 1;
+            int r = size - 1;
+
+            while (l < r) {
+                int sum = nums[i] + nums[l] + nums[r];
+                int diff = Math.abs(sum - target);
+                if(diff == 0) {
+                    return target;
+                }
+
+                if(diff < min) {
+                    min = diff;
+                    result = sum;
+                }
+
+                if (sum <= target) {
+                    l++;
+                } else {
+                    r--;
+                }
+            }
+        }
+
+        return result;
+    }
+
     public static void main(String [] args) {
-        int [] nums = {1, 2, 4, 8, 16, 32, 64, 128};
-        int target = 82;
-        int r = threeSumClosest(nums, target);
+        int [] nums = {1, 1, 1, 0};
+        int target = 100;
+        int r = closest(nums, target);
         System.out.print(r);
     }
 }
