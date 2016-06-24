@@ -142,7 +142,7 @@ public class ThreeSumClosest {
         int size = nums.length;
         int result = 0;
 
-        for(int i = 0; i < size; i++) {
+        for(int i = 0; i < size - 2; i++) {
             int l = i + 1;
             int r = size - 1;
 
