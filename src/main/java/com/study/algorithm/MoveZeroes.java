@@ -18,17 +18,23 @@ public class MoveZeroes {
     public void moveZeroes(int[] nums) {
         Arrays.sort(nums);
         int size = nums.length;
-        int j = size - 1;
+        int seroCount = 0;
         for(int i = 0; i < size; i++) {
-            while (i < j) {
-                if(nums[i] == 0) {
-                    int tmp = nums[j];
-                    nums[j] = nums[i];
-                    nums[i] = tmp;
-                    j--;
-                } else
-                    break;
+            if(nums[i] != 0) {
+                break;
+            } else {
+                seroCount ++;
             }
+        }
+
+        int i = 0;
+        for(int j = seroCount; j < size; j++, i++) {
+            nums[i] = nums[j];
+        }
+
+        while (i < size) {
+            nums[i] = 0;
+            i++;
         }
     }
 
@@ -36,7 +42,7 @@ public class MoveZeroes {
         int [] n = {0, 1, 0, 3, 12};
         new MoveZeroes().moveZeroes(n);
         for(int i = 0; i < n.length; i++) {
-            System.out.println(n[i]);
+            System.out.print(n[i] + ", ");
         }
     }
 }
