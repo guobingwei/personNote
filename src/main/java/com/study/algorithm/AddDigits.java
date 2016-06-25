@@ -13,6 +13,22 @@ public class AddDigits {
         return (res != 0 || num == 0) ? res : 9;
     }
 
+    // 最传统的做法，循环相加
+    public static int addDigitsByNormal(int num) {
+
+        while (num / 10 > 0) {
+            int sum = 0;
+            while (num > 0) {
+                sum += num % 10;
+                num /= 10;
+            }
+
+            num = sum;
+        }
+
+        return num;
+    }
+
     public static void main(String [] args) {
         System.out.print(new AddDigits().addDigits(19));
     }
