@@ -24,6 +24,7 @@ public class CountPrime {
         return count;
     }
 
+    // 埃拉托斯特尼筛法
     public int countPrimes2(int n) {
         boolean[] notPrime = new boolean[n];
         int count = 0;
@@ -48,8 +49,26 @@ public class CountPrime {
         return true;
     }
 
+    // 根据埃拉托斯特尼筛法算法思路自己写一遍
+    public static int countPrime(int n) {
+        int count = 0;
+        boolean [] notPrime = new boolean[n];
+        for(int i = 2; i < n; i++) {
+            if(!notPrime[i]) {
+                count++;
+            }
+
+            for(int j = i; j * i < n; j++) {
+                notPrime[j * i] = true;
+            }
+        }
+
+        return count;
+    }
+
     public static void main(String [] args) {
-        new CountPrime().countPrimes2(10);
-        System.out.print(CountPrime.isPrime(7));
+        System.out.println(new CountPrime().countPrimes(15));
+        System.out.println(new CountPrime().countPrimes2(15));
+        System.out.println(CountPrime.isPrime(7));
     }
 }
