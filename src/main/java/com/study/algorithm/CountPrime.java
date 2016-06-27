@@ -24,7 +24,7 @@ public class CountPrime {
         return count;
     }
 
-    // 埃拉托斯特尼筛法
+    // 埃拉托斯特尼筛法 时间 O(NloglogN) 空间 O(N)
     public int countPrimes2(int n) {
         boolean[] notPrime = new boolean[n];
         int count = 0;
