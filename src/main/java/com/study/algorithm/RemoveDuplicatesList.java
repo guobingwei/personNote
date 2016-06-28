@@ -16,18 +16,20 @@ public class RemoveDuplicatesList {
     }
 
     public ListNode deleteDuplicates(ListNode head) {
-        if(head == null || head.next == null) {
+        if(head == null || head.next == null){
             return head;
         }
 
+        int val = head.val;
         ListNode next = head.next;
-        ListNode headCopy = head;
-
-        if(headCopy.val == next.val) {
-            headCopy.next = next.next;
-            return deleteDuplicates(headCopy);
+        if(next.val != val){
+            head.next = deleteDuplicates(next);
+            return head;
+        }else{
+            while(next != null && next.val == val){
+                next = next.next;
+            }
+            return deleteDuplicates(next);
         }
-
-        return head;
     }
 }
