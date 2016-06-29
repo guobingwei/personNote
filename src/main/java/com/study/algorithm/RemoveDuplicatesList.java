@@ -15,8 +15,13 @@ public class RemoveDuplicatesList {
         }
     }
 
+    /**
+     * 递归写法
+     * @param head
+     * @return
+     */
     public ListNode deleteDuplicates(ListNode head) {
-        if(head == null || head.next == null){
+        if(head == null || head.next == null) {
             return head;
         }
 
@@ -26,10 +31,17 @@ public class RemoveDuplicatesList {
             head.next = deleteDuplicates(next);
             return head;
         }else{
-            while(next != null && next.val == val){
+            while(next != null && next.val == val) {
                 next = next.next;
             }
             return deleteDuplicates(next);
         }
+    }
+
+    /***
+     * 非递归，用循环解决
+     */
+    public void deleteDuplicateByLoop(ListNode head) {
+
     }
 }

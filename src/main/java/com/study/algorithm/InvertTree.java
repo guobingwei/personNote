@@ -24,7 +24,11 @@ public class InvertTree {
         }
     }
 
-    // 根据对称性反转，这些问题都用递归解决啊
+    /**
+     * 根据对称性反转，递归
+     * @param root
+     * @return
+     */
     public TreeNode invertTree(TreeNode root) {
         if (root == null) {
             return null;
@@ -35,5 +39,18 @@ public class InvertTree {
         root.left = invertTree(right);
         root.right = invertTree(left);
         return root;
+    }
+
+    /**
+     * 非递归, 用循环 no no no~ 这还是递归
+     */
+    public void Mirror(TreeNode root) {
+        if(root != null){
+            Mirror(root.left);
+            Mirror(root.right);
+            TreeNode temp = root.left;
+            root.left=root.right;
+            root.right = temp;
+        }
     }
 }
