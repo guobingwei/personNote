@@ -1,7 +1,7 @@
 package com.study.algorithm;
 
 /**
- *            4
+ *           4
  *         /    \
  *        2     7
  *        / \   / \
