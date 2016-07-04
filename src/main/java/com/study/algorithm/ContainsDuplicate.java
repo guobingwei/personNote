@@ -43,7 +43,7 @@ public class ContainsDuplicate {
             if ((mark[j] & check) != 0) {
                 return true;
             }
-            
+
             mark[j] |= check;
         }
 
