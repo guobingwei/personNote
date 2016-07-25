@@ -1,7 +1,7 @@
 package com.study.jvm;
 
 /**
- *  VM参数：
+ *  VM参数：xx
  *  -verbose:gc
  *  -Xms20M (初始堆大小为20M)
  *  -Xmx20M (最大堆大小为20M)
