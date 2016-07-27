@@ -50,7 +50,7 @@ public class RemoveDuplicatesFromList {
         return head;
     }
 
-    // 动态规划问题
+    // 爬楼梯 动态规划问题
     public int climbStairs2(int n) {
         int [] res = new int[3];
         res[0] = 1;
@@ -61,7 +61,7 @@ public class RemoveDuplicatesFromList {
         return res[n%3];
     }
 
-    // 最初做法
+    // 爬楼梯 最基本做法
     public int climbStairs(int n) {
         if(n == 0|| n == 1 || n == 2){
             return n;
@@ -78,4 +78,46 @@ public class RemoveDuplicatesFromList {
 
         return ways[n];
     }
+
+    // 算买入股票的最佳收益问题
+    public static int maxProfit(int[] prices) {
+        int size = prices.length;
+        if(size < 2) {
+            return 0;
+        }
+        int min = prices[0];
+        int max = prices[1];
+
+        for(int i = 1; i < size; i++) {
+            if((min > prices[i]) && (i < size -1)) {
+                min = prices[i++];
+                max = prices[i];
+            }
+
+            if(max < prices[i]) {
+                max = prices[i];
+            }
+        }
+
+        return (max - min) > 0 ? (max - min) : 0;
+    }
+
+    public static void main(String [] args) {
+        int [] stack = {7,6,4,3,1};
+        maxProfit(stack);
+    }
+
+    // 算买入股票的最佳收益问题
+    public int maxProfit1(int[] prices) {
+        if(prices.length == 0 || prices.length == 1)
+            return 0;
+        int min = prices[0],result = 0;
+        for (int i = 1;i < prices.length; i++) {
+            if (prices[i] > prices[i-1])
+                result = Math.max(result, prices[i] - min);
+            else min = Math.min(min, prices[i]);
+        }
+        return result;
+    }
+
 }
