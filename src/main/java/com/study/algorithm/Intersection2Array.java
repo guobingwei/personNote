@@ -1,6 +1,9 @@
 package com.study.algorithm;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * 找出一个数组中的交集
@@ -10,17 +13,27 @@ public class Intersection2Array {
 
 
     public int[] intersect(int[] nums1, int[] nums2) {
-        int len = nums1.length > nums2.length ? nums1.length : nums2.length;
-        int [] result = new int[len];
-        if(nums1.length <= 0 || nums2.length <= 0) {
-            return result;
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+
+        int p1 = 0;
+        int p2 = 0;
+        List list = new ArrayList();
+        while(p1 < nums1.length && p2 < nums2.length) {
+            if(nums1[p1] < nums2[p2]) {
+                p1++;
+            } else if(nums1[p1] > nums2[p2]) {
+                p2++;
+            } else {
+                list.add(nums1[p1]);
+            }
         }
 
-        HashMap map = new HashMap();
-        for(int i = 0; i < nums1.length; i++) {
-
+        int [] res = new int[list.size()];
+        for(int i = 0; i < res.length; i++) {
+            res[i] = (int)list.get(i);
         }
-        return result;
+        return res;
     }
 
     public static void  main(String [] args) {
