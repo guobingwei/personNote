@@ -79,4 +79,8 @@ public class HouseRobber {
 
         return b;
     }
+
+    public static void main(String [] args) {
+        System.out.println((float) 1.1 - 1);
+    }
 }
