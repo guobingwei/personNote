@@ -14,7 +14,7 @@ public class PrintMain {
         try {
             pt1.start();
             pt4.start();
-//            pt4.join();
+            pt4.join();
         } catch (Exception e) {
             e.printStackTrace();
         }
