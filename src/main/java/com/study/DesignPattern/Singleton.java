@@ -1,5 +1,4 @@
-package com.study.designPattern;
-
+package com.study.DesignPattern;
 
 /**
  * 单例类深入分析

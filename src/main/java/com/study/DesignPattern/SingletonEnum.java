@@ -1,4 +1,4 @@
-package com.study.designPattern;
+package com.study.DesignPattern;
 
 /**
  *    JDK 版本：JDK1.5 起
