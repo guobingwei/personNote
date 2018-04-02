@@ -1,4 +1,4 @@
-package com.study.designPattern.command;
+package com.study.DesignPattern.command.v1;
 
 /**
  * 使用 Broker 类来接受并执行命令。

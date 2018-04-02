@@ -1,16 +1,17 @@
-package com.study.designPattern.command;
+package com.study.DesignPattern.command.v1;
 
 /**
  * Created by guobing on 2016/4/26.
  */
-public class SellStock implements Order {
+public class BuyStock implements Order {
     private Stock stock;
 
-    public SellStock(Stock stock) {
+    public BuyStock(Stock stock){
         this.stock = stock;
     }
+
     @Override
     public void excute() {
-        stock.sell();
+        stock.buy();
     }
 }

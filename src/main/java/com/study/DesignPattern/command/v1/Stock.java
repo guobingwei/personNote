@@ -1,4 +1,4 @@
-package com.study.designPattern.command;
+package com.study.DesignPattern.command.v1;
 
 /**
  * 创建一个请求者

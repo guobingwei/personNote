@@ -1,4 +1,4 @@
-package com.study.designPattern.command;
+package com.study.DesignPattern.command.v1;
 
 /**
  * Created by guobing on 2016/4/26.
