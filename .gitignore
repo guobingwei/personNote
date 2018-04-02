@@ -1,0 +1,50 @@
+# maven ignore
+target/
+#*.jar
+*.war
+*.zip
+*.tar
+*.tar.gz
+*.class
+
+# eclipse ignore
+.settings/
+.project
+.classpath
+
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+
+# temp ignore
+logs/
+*.doc
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+# system ignore
+.DS_Store
+Thumbs.db
+.gradle
+#gradle/
+build/
+classes/
+
+
+gradle/wrapper/
+*.jar
+
+
+
+src/main/resources/node_modules
+/out/
+
+src/main/resources/static/node_modules
+src/main/resources/static/myapp/node_modules
+src/main/resources/static/promotion/jspm_packages
+src/main/resources/static/package-lock.json
