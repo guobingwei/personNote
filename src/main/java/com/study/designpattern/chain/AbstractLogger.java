@@ -1,4 +1,4 @@
-package com.study.designPattern.chain;
+package com.study.designpattern.chain;
 
 /**
  * 创建抽象的记录器类。

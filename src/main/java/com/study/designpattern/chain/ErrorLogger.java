@@ -1,4 +1,4 @@
-package com.study.designPattern.chain;
+package com.study.designpattern.chain;
 
 /**
  * Created by guobing on 2016/4/25.
