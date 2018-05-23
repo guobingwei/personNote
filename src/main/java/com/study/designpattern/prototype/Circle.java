@@ -4,6 +4,7 @@ package com.study.designpattern.prototype;
  * Created by guobing on 2016/4/13.
  */
 public class Circle extends Shape{
+
     public Circle() {
         type = "Circle";
     }
