@@ -1,9 +1,8 @@
 package com.study.designpattern.observa;
 
-import com.study.designpattern.observa.observable.Hanfiezi;
-import com.study.designpattern.observa.observer.Lisi;
-import com.study.designpattern.observa.observer.Observer;
 import com.study.designpattern.observa.observer.WangSi;
+import com.study.designpattern.observa.observable.Hanfiezi;
+import com.study.designpattern.observa.observer.Observer;
 
 /**
  * Created by guobingwei on 18/5/18.
@@ -13,7 +12,7 @@ public class Client {
 
 
     public static void main(String[] args) {
-        Observer lisi = new Lisi();
+        Observer lisi = new com.study.designpattern.observa.observer.Lisi();
         Observer wangSi = new WangSi();
 
         Hanfiezi hanfiezi = new Hanfiezi();

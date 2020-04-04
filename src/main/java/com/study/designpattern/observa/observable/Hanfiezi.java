@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by guobingwei on 18/5/18.
  */
-public class Hanfiezi implements IHanfeizi, Observable {
+public class Hanfiezi implements com.study.designpattern.observa.observable.IHanfeizi, com.study.designpattern.observa.observable.Observable {
 
     private List<Observer> observerList = new ArrayList<>();
 
