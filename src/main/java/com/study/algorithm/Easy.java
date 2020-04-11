@@ -1,7 +1,7 @@
 package com.study.algorithm;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 /**
  * Created with IntelliJ IDEA.
@@ -30,12 +30,18 @@ public class Easy {
 		return x == end || x == end / 10;
 	}
 
+	/**
+	 * 罗马数字转阿拉伯数字
+	 *
+	 * @param s
+	 * @return
+	 */
 	public static int romanToInt(String s) {
 		int number = 0;
 		int length = s.length();
 		for (int i = 0; i < length; i++) {
 			Character current = s.charAt(i);
-			if (i < length -1 && getNumber(current) < getNumber(s.charAt(i+1))) {
+			if (i < length - 1 && getNumber(current) < getNumber(s.charAt(i + 1))) {
 				number -= getNumber(current);
 			} else {
 				number += getNumber(current);
@@ -65,9 +71,95 @@ public class Easy {
 		}
 	}
 
+	/**
+	 * 求最长公共前缀
+	 *
+	 * @param strs
+	 * @return
+	 */
+	public static String longestCommonPrefix(String[] strs) {
+		if (strs.length <= 0) {
+			return "";
+		}
+
+		String first = strs[0];
+		for (int i = 1; i < strs.length; i++) {
+
+			while (strs[i].indexOf(first) != 0) {
+				first = first.substring(0, first.length() - 1);
+			}
+		}
+		return first;
+	}
+
+	/**
+	 * 求最长公共字符
+	 *
+	 * @param strs
+	 * @return
+	 */
+	public static String longestCommon(String[] strs) {
+		if (strs.length <= 0) {
+			return "";
+		}
+
+		String first = strs[0];
+		for (int i = 1; i < strs.length; i++) {
+
+			while (!strs[i].contains(first)) {
+				first = first.substring(0, first.length() - 1);
+			}
+		}
+		return first;
+	}
+
+	// "[]({})(([]){})"
+
+	public static boolean isValid(String s) {
+		if (s.length() <= 0) {
+			return true;
+		}
+
+		while (s.contains("{}") || s.contains("[]") || s.contains("()")) {
+			s = s.replace("{}", "");
+			s = s.replace("[]", "");
+			s = s.replace("()", "");
+		}
+		return s.equals("");
+	}
+
+	public static boolean isValidByStack(String s) {
+
+		Deque<Character> stack = new ArrayDeque<>();
+		for (char c : s.toCharArray()) {
+			if ('{' == c) {
+				stack.push('}');
+			} else if ('(' == c) {
+				stack.push(')');
+			} else if ('[' == c) {
+				stack.push(']');
+			} else if (stack.isEmpty() || c != stack.pop()) {
+				return false;
+			}
+		}
+		return stack.isEmpty();
+	}
+
+	public static Character getReverse(Character source) {
+		switch (source) {
+			case '{':
+				return '}';
+			case '[':
+				return ']';
+			case '(':
+				return ')';
+			default:
+				return 'u';
+		}
+	}
+
 	public static void main(String[] args) {
-		long begin = System.currentTimeMillis();
-		System.out.println(romanToInt("MCMXCIV"));
-		System.out.println(System.currentTimeMillis() - begin);
+		String s = "[]({})(([]){})";
+		System.out.println(isValidByStack(s));
 	}
 }
