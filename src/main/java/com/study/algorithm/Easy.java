@@ -129,9 +129,22 @@ public class Easy {
 	}
 
 	public static boolean isValidByStack(String s) {
+		int length = s.length();
+		if (length <= 0) {
+			return true;
+		}
+
+		if (length % 2 != 0) {
+			return false;
+		}
 
 		Deque<Character> stack = new ArrayDeque<>();
 		for (char c : s.toCharArray()) {
+
+			if (stack.size() > length / 2) {
+				return false;
+			}
+
 			if ('{' == c) {
 				stack.push('}');
 			} else if ('(' == c) {
@@ -143,6 +156,35 @@ public class Easy {
 			}
 		}
 		return stack.isEmpty();
+	}
+
+	public boolean isValidFast(String s) {
+		char[] stack = s.toCharArray();
+		int length = s.length();
+		if (length <= 0) {
+			return true;
+		}
+
+		if (stack[0] != '(' && stack[0] != '[' && stack[0] != '{') {
+			return false;
+		}
+
+		int top = 0;
+		int offset = 1;
+
+		while (offset < length) {
+			if (stack[offset] == '(' || stack[offset] == '[' || stack[offset] == '{') {
+				stack[++top] = stack[offset];
+			} else {
+				if (top < 0) return false;
+				if (stack[top] == '(' && stack[offset] != ')') return false;
+				if (stack[top] == '[' && stack[offset] != ']') return false;
+				if (stack[top] == '{' && stack[offset] != '}') return false;
+				top--;
+			}
+			offset++;
+		}
+		return top < 0 ? true : false;
 	}
 
 	public static Character getReverse(Character source) {
