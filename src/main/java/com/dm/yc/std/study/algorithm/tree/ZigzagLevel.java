@@ -51,4 +51,5 @@ public class ZigzagLevel {
 		traversal(node.left, result, level + 1);
 		traversal(node.right, result, level + 1);
 	}
+
 }
